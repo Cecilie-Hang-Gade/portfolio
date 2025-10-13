@@ -37,13 +37,14 @@
         color: #333;
       }
 
-      .site-title {
-        font-size: 1.2rem;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-          sans-serif;
-        color: #333;
-      }
+     .site-title a {
+  text-decoration: none;
+  color: #333;
+}
+
+.site-title a:hover {
+  color: #4444ff; /* eller en anden farve ved hover */
+}
 
       .nav-links {
         display: flex;
@@ -172,7 +173,12 @@
         padding: 3rem 0;
         background-color: #f0f4ff;
       }
-
+.banners-section .banner-item img {
+  width: 70%;   /* try 40–60% for nice balance */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
       .banners-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -220,6 +226,17 @@
       .banner-item:hover .banner-overlay {
         transform: translateY(0);
       }
+/* UI section */
+      .ui-platform .banner-item img {
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.ui-platform .banner-overlay {
+  display: none;
+}
 /*list til figma */
 .liste-figma li {
 list-style: none;
@@ -330,11 +347,13 @@ list-style: none;
   <body>
     <!-- Navigation -->
     <div class="container navbar">
-      <h1 class="site-title">CECILIE HANG GADE</h1>
+       <h1 class="site-title">
+  <a href="ux-portfolio.html">CECILIE HANG GADE</a>
+</h1>
       <div class="nav-links">
         <a href="../index.html">Home</a>
         <a href="../index.html#about">About</a>
-        <a href="https://cecilie-hang-gade.github.io/portfolio.github.io/pdf/UX.pdf" target="_blank">CV</a>
+        <!-- <a href="https://cecilie-hang-gade.github.io/portfolio.github.io/pdf/UX.pdf" target="_blank">CV</a>-->
         <a href="https://www.linkedin.com/in/ceciliegade">Contact</a>
       </div>
     </div>
@@ -409,14 +428,118 @@ list-style: none;
           <div class="step-number">4</div>
           <h4>High fidelity prototype</h4>
           <p>
-            (Current stage) Refining the prototype in Figma to streamline the booking flow and
+            Refining the prototype in Figma to streamline the booking flow and
             enhance overall usability.
           </p>
         </div>
       </div>
     </section>
+     <!-- sketches Section -->
+
+    <section class="banners-section">
+      <h2 class="section-title">Wireframe & User flow</h2>
+      <p class="section-description">
+        A preliminary interface sketch and user flow were developed to visualize
+        the user journey. These were used in UX testing to evaluate how well the
+        design met user needs and expectations.
+      </p>
+
+      <div class="banner-item">
+        <img src="../images/sketch2.jpg" alt="sketch" />
+        <div class="banner-overlay">
+          <h4>Wireframe / User Flow</h4>
+          <p>A sketch of the interface and user flow, used to test the UX.</p>
+        </div>
+      </div>
+    </section>
+     
     
-     <!-- FIGMA  PROTYPE -->
+    <!-- workshop Section -->
+    <section class="logos-section">
+      <h2 class="section-title">Workshop</h2>
+      <p class="section-description">
+        Co-designing the best UX for young people (18–35) through user
+        collaboration.
+      </p>
+
+      <div class="logos-grid">
+        <div class="logo-item">
+          <img
+            src="../images/workshop4.jpeg"
+            alt="E-handelsprisen main logo"
+          />
+          <h4>The best User Journey</h4>
+        </div>
+        <div class="logo-item">
+          <img
+            src="../images/workshop3.jpeg"
+            alt="Award category illustration"
+          />
+          <h4>Building functions</h4>
+        </div>
+        <div class="logo-item">
+          <img
+            src="../images/workshop2.jpeg"
+            alt="Theme illustration"
+          />
+          <h4>Collaboration</h4>
+        </div>
+        <div class="logo-item">
+          <img
+            src="../images/workshop1.jpeg"
+            alt="Event element illustration"
+          />
+          <h4>The best platform</h4>
+        </div>
+      </div>
+    </section>
+
+    </div>
+    
+    <!-- final prototype Section -->
+    <section class="banners-section ui-platform">
+      <h2 class="section-title">UI of the platform</h2>
+      <p class="section-description">
+    The final Figma prototype. The user flow and interactions were tested with participants through Think-Aloud testing to evaluate usability and design clarity.
+      </p>
+
+      <div class="banners-grid">
+        <div class="banner-item">
+          <img src="../images/dsb 1.png" alt="dsb figma" />
+          <div class="banner-overlay">
+            <h4>B2B Category Banner</h4>
+            <p></p>
+          </div>
+        </div>
+        <div class="banner-item">
+          <img
+            src="../images/dsb 2.png"
+            alt="dsb figma"
+          />
+          <div class="banner-overlay">
+            <h4></h4>
+            <p></p>
+          </div>
+        </div>
+        <div class="banner-item">
+          <img src="../images/DSB 3.png" alt="Dsb figma" />
+          <div class="banner-overlay">
+            <h4>Theme Banner</h4>
+            <p></p>
+          </div>
+        </div>
+        <div class="banner-item">
+          <img src="../images/dsb 4.png" alt="dsb figma" />
+          <div class="banner-overlay">
+            <h4>Event Banner</h4>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- FIGMA  PROTYPE -->
  <section class="prototype">
   <h2 class="section-title">Figma prototype</h2>
   <p class="section-description">
@@ -434,109 +557,10 @@ list-style: none;
   </div>
 </section>
     
-    <!-- sketches Section -->
+  
 
-    <section class="banners-section">
-      <h2 class="section-title">Wireframe & User flow</h2>
-      <p class="section-description">
-        A preliminary interface sketch and user flow were developed to visualize
-        the user journey. These were used in UX testing to evaluate how well the
-        design met user needs and expectations.
-      </p>
-
-      <div class="banner-item">
-        <img src="/portfolio.github.io/images/sketch2.jpg" alt="sketch" />
-        <div class="banner-overlay">
-          <h4>Wireframe / User Flow</h4>
-          <p>A sketch of the interface and user flow, used to test the UX.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- sketches Section 
-    <section class="banners-section">
-      <h2 class="section-title">Workshop</h2>
-      <p class="section-description">
-        Co-designing the best UX for young people (18–35) through user
-        collaboration.
-      </p>
-
-      <div class="banners-grid">
-        <div class="banner-item">
-          <img src="images/sketch3.jpg" alt="B2B Category Banner" />
-          <div class="banner-overlay">
-            <h4>B2B Category Banner</h4>
-            <p>Digital banner for B2B e-commerce award category</p>
-          </div>
-        </div>
-        <div class="banner-item">
-          <img
-            src="images/sketch1.jpg"
-            alt="Best New E-commerce Business Banner"
-          />
-          <div class="banner-overlay">
-            <h4>Best New E-commerce Banner</h4>
-            <p>Promotional banner for the newcomer award category</p>
-          </div>
-        </div>
-        <div class="banner-item">
-          <img src="images/workshop1.jpeg" alt="Theme Banner" />
-          <div class="banner-overlay">
-            <h4>Theme Banner</h4>
-            <p>Banner highlighting this year's main theme</p>
-          </div>
-        </div>
-        <div class="banner-item">
-          <img src="images/workshop4.jpeg" alt="General Event Banner" />
-          <div class="banner-overlay">
-            <h4>Event Banner</h4>
-            <p>Main promotional banner for the E-handelsprisen event</p>
-          </div>
-        </div>
-      </div>
-    </section>-->
-
-    <!-- workshop Section -->
-    <section class="logos-section">
-      <h2 class="section-title">Workshop</h2>
-      <p class="section-description">
-        Co-designing the best UX for young people (18–35) through user
-        collaboration.
-      </p>
-
-      <div class="logos-grid">
-        <div class="logo-item">
-          <img
-            src="/portfolio.github.io/images/workshop4.jpeg"
-            alt="E-handelsprisen main logo"
-          />
-          <h4>The best User Journey</h4>
-        </div>
-        <div class="logo-item">
-          <img
-            src="/portfolio.github.io/images/workshop3.jpeg"
-            alt="Award category illustration"
-          />
-          <h4>Building functions</h4>
-        </div>
-        <div class="logo-item">
-          <img
-            src="/portfolio.github.io/images/workshop2.jpeg"
-            alt="Theme illustration"
-          />
-          <h4>Collaboration</h4>
-        </div>
-        <div class="logo-item">
-          <img
-            src="/portfolio.github.io/images/workshop1.jpeg"
-            alt="Event element illustration"
-          />
-          <h4>The best platform</h4>
-        </div>
-      </div>
-    </section>
-
-    </div>
+    
+   
 
     <!-- Footer -->
      <footer>

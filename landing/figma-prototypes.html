@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cecilie Hang Gade - Visual Identity Project</title>
+    <title>Cecilie Hang Gade - Figma</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
     <style>
       * {
@@ -24,7 +24,14 @@
         margin: 0 auto;
         padding: 0 20px;
       }
+.site-title a {
+  text-decoration: none;
+  color: #333;
+}
 
+.site-title a:hover {
+  color: #4444ff; /* eller en anden farve ved hover */
+}
       /* Navigation */
       .navbar {
         display: flex;
@@ -78,7 +85,7 @@
         position: relative;
         z-index: 2;
         max-width: 600px;
-        padding: 3.5rem 0;
+        padding: 1.5rem 0;
         color: white;
       }
 
@@ -172,15 +179,28 @@
         padding: 3rem 0;
         background-color: #f0f4ff;
       }
-
+.banners-section .banner-item img {
+  width: 70%;   /* try 40–60% for nice balance */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
       .banners-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        margin: 0 auto;
-        max-width: 1000px;
-      }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  gap: 2rem;
+  justify-content: center; /* centers the columns in the container */
+  align-items: center;     /* vertically centers them if heights differ */
+  margin: 0 auto;
+  max-width: 1000px;
+}
 
+.banner-item img {
+  width: 100%;   /* fills its column */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centers the image inside its column */
+}
       @media (max-width: 768px) {
         .banners-grid {
           grid-template-columns: 1fr;
@@ -220,7 +240,24 @@
       .banner-item:hover .banner-overlay {
         transform: translateY(0);
       }
+/* UI section */
+      .ui-platform .banner-item img {
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 
+.ui-platform .banner-overlay {
+  display: none;
+}
+/*list til figma */
+.liste-figma li {
+list-style: none;
+  padding: 0;
+  margin: 0 auto;       
+  width: fit-content;   
+  text-align: center;}
       /* Process Section */
       .process-section {
         padding: 3rem 0;
@@ -257,7 +294,14 @@
         margin: 0 auto 1rem;
         font-weight: bold;
       }
+/* Proto Section */
+      .iframe-wrapper {
+  text-align: center;
+}
 
+.iframe-wrapper iframe {
+  display: inline-block;
+}
       /* Contact Section */
       .contact-section {
         padding: 5rem 0;
@@ -317,12 +361,14 @@
   <body>
     <!-- Navigation -->
     <div class="container navbar">
-      <h1 class="site-title">CECILIE HANG GADE</h1>
+      <h1 class="site-title">
+  <a href="ux-portfolio.html">CECILIE HANG GADE</a>
+</h1>
       <div class="nav-links">
         <a href="../index.html">Home</a>
-        <a href="#about">About</a>
-        <!-- <a href="your-cv-file.pdf" target="_blank">CV</a>-->
-        <a href="#contact">Contact</a>
+        <a href="../index.html#about">About</a>
+        <!-- <a href="https://cecilie-hang-gade.github.io/portfolio.github.io/pdf/UX.pdf" target="_blank">CV</a>-->
+        <a href="https://www.linkedin.com/in/ceciliegade">Contact</a>
       </div>
     </div>
 
@@ -331,122 +377,20 @@
       <div id="hero-canvas"></div>
       <div class="container">
         <div class="hero-content">
-          <h1>Visual Identity: E-handelsprisen</h1>
+          <h1>
+            Figma Prototypes
+          </h1>
           <p>
-            A comprehensive visual identity project for the Danish E-commerce
-            Awards, creating cohesive branding across multiple platforms and
-            formats. Creating a visuel theme with Oscars/25 anniversary vibes
-            for digital and physical use.
+            A collection of interactive design prototypes created in Figma. Each project explores different user experiences, interface layouts, and design concepts developed through iterative UX design processes.
           </p>
         </div>
       </div>
-      <div class="brand-overlay">DANSK ERHVERV</div>
-    </section>
-    <!-- Banners Section -->
-    <section class="banners-section">
-      <h2 class="section-title">Campaign Banners</h2>
-      <p class="section-description">
-        Digital banners designed for various platforms to promote the event and
-        award categories.
-      </p>
-
-      <div class="banners-grid">
-        <div class="banner-item">
-          <img src="../images/Tema epris.png" alt="Theme Banner" />
-          <div class="banner-overlay">
-            <h4>Theme Banner</h4>
-            <p>Banner highlighting this year's main theme</p>
-          </div>
-        </div>
-        <div class="banner-item">
-          <img src="../images/epris-banner.png" alt="General Event Banner" />
-          <div class="banner-overlay">
-            <h4>Event Banner</h4>
-            <p>
-              Promotional banner for the event, made 100+ for people to share on
-              LinkedIn
-            </p>
-          </div>
-        </div>
-        <div class="video-container">
-          <video controls autoplay muted>
-            <source src="../video/b2b over 200.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="banner-item">
-          <img src="../images/b2b over 200.png" alt="B2B Category Banner" />
-          <div class="banner-overlay">
-            <h4>B2B Category Banner</h4>
-            <p>Digital banner for B2B e-commerce award category</p>
-          </div>
-        </div>
-        <div class="banner-item">
-          <img
-            src="../images/Bedste nye e-handelsvirksomhed.png"
-            alt="Best New E-commerce Business Banner"
-          />
-          <div class="banner-overlay">
-            <h4>Best New E-commerce Banner</h4>
-            <p>Promotional banner for the newcomer award category</p>
-          </div>
-        </div>
-        <div class="video-container">
-          <video controls autoplay muted>
-            <source src="../video/Prisfesten1_2025.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </section>
-    <!-- Banners Section -->
-    <section class="banners-section">
-      <h2 class="section-title">E-commerce Award 2025 banners</h2>
-      <p class="section-description">
-        Physical banner for the E-commerce Award 2025
-      </p>
-
-      <div class="banners-grid">
-        <div class="banner-item">
-          <img
-            src="../images/Banner-epris5.jpeg"
-            alt="Physical banner for the E-commerce Award 2025"
-          />
-          <div class="banner-overlay">
-            <h4>Banner</h4>
-            <p>Physical banner for the E-commerce Award 2025</p>
-          </div>
-        </div>
-        <div class="banner-item">
-          <img
-            src="../images/Banner-epris6.jpeg"
-            alt="Entrance banner for the E-commerce Award 2025"
-          />
-          <div class="banner-overlay">
-            <h4>Entrance banner for the E-commerce Award 2025</h4>
-            <p>14m x 2m</p>
-          </div>
-        </div>
-        <div class="banner-item">
-          <img src="../images/Banner-epris.jpg" alt="Theme Banner" />
-          <div class="banner-overlay">
-            <h4>Theme Banner</h4>
-            <p>4m x 2mBanner highlighting this year's main theme</p>
-          </div>
-        </div>
-        <div class="banner-item">
-          <img src="../images/Banner-epris2.jpg" alt="Logo Bannerr" />
-          <div class="banner-overlay">
-            <h4>Event Banner</h4>
-            <p>"8m x 4m - Blue Carpet" promotion banner with partner logos</p>
-          </div>
-        </div>
-      </div>
+      <div class="brand-overlay">Figma Prototypes</div>
     </section>
 
-    <!-- Video Section 
+    <!-- Video Section
     <section class="video-section">
-      <h2 class="section-title">Promotional Video first draft</h2>
+      <h2 class="section-title">Promotional Video</h2>
       <p class="section-description">
         An engaging promotional video created to showcase the E-handelsprisen
         event and its significance in the e-commerce industry.
@@ -454,127 +398,85 @@
 
       <div class="video-container">
         <video controls autoplay muted>
-          <source src="../video/blå.mp4" type="video/mp4" />
+          <source src="video/blå.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-    </section> -->
+    </section>  -->
 
-    <!-- Logos Section -->
-    <section class="logos-section">
-      <h2 class="section-title">Logos & Illustrations</h2>
+   
+    
+    
+    <!-- final prototype Section -->
+    <section class="banners-section ui-platform">
+      <h2 class="section-title">LUMOS Figma Prototype</h2>
       <p class="section-description">
-        Key visual elements created to establish a strong brand identity for
-        E-handelsprisen.
+    The final Figma prototype. The user flow and interactions were tested with participants through Think-Aloud testing to evaluate usability and design clarity.
       </p>
 
-      <div class="logos-grid">
-        <div class="logo-item">
+      <div class="banners-grid">
+        <div class="banner-item">
+          <img src="../images/lumos2.png" alt="dsb figma" />
+          <div class="banner-overlay">
+            <h4>B2B Category Banner</h4>
+            <p></p>
+          </div>
+        </div>
+        <div class="banner-item">
           <img
-            src="../images/25 epris logo1.png"
-            alt="E-handelsprisen main logo"
+            src="../images/lumos1.png"
+            alt="dsb figma"
           />
-          <h4>Main Logo</h4>
+          <div class="banner-overlay">
+            <h4></h4>
+            <p></p>
+          </div>
         </div>
-        <div class="logo-item">
-          <img
-            src="../images/25 epris logo2.png"
-            alt="E-handelsprisen second logo"
-          />
-          <h4>Award Logo</h4>
-        </div>
-        <div class="logo-item">
-          <img src="../images/TEMA_100.png" alt="Theme illustration" />
-          <h4>Theme Illustration</h4>
-        </div>
-      </div>
+       
     </section>
 
-    <!-- Design Process Section 
-    <section class="process-section">
-      <h2 class="section-title">Design Process</h2>
-      <p class="section-description">
-        A glimpse into the creative journey behind this visual identity project.
-      </p>
+    
+    <!-- FIGMA  PROTYPE -->
+ <section class="prototype">
+  <h2 class="section-title">Figma prototype</h2>
+  <p class="section-description">
+ <br> An interactive prototype of our solution. Try the user flow:
 
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <h4>Research</h4>
-          <p>
-            Analyzing the e-commerce industry and previous award events to
-            establish context and goals.
-          </p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <h4>Concept Development</h4>
-          <p>
-            Creating initial sketches and visual concepts aligned with the
-            event's objectives.
-          </p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <h4>Design Implementation</h4>
-          <p>
-            Refining the selected concept into a cohesive visual identity system
-            across formats.
-          </p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <h4>Delivery & Application</h4>
-          <p>
-            Finalizing assets for various platforms and creating guidelines for
-            brand consistency.
-          </p>
-        </div>
-      </div>
-    </section>-->
+</ul>
+  </p>
+  <div class="iframe-wrapper">
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/1I3MJdPfSvyyZeBlwr9MQ3/Lysdesign?node-id=150-271&p=f&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=131%3A107&embed-host=share" allowfullscreen></iframe></div>
+</section>
+    
+  
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <h2>LET'S CONNECT</h2>
-        <a
-          href="https://linkedin.com/in/ceciliegade"
-          target="_blank"
-          class="contact-button"
-        >
-          Contact
-        </a>
-      </div>
-    </section>
+    
+   
 
     <!-- Footer -->
-    <footer>
+     <footer>
       <div class="container">
         <div class="footer-grid">
           <div>
             <h3>Cecilie Hang Gade Portfolio</h3>
             <p>
-              This website contains projects from work and university.
-              Disclaimer: this website was coded with help from AI
+              This portfolio contains projects from work and university.
+          
             </p>
           </div>
           <div>
             <h4>Explore</h4>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../index.html#projects">Projects</a></li>
+              <li><a href="../index.html#about">About</a></li>
+              <li><a href="https://www.linkedin.com/in/ceciliegade">Contact</a></li>
             </ul>
           </div>
           <div>
             <h4>Follow me</h4>
             <ul>
-              <li>
-                <a href="https://linkedin.com/in/ceciliegade" target="_blank"
-                  >LinkedIn</a
-                >
-              </li>
+              <li><a href="https://www.linkedin.com/in/ceciliegade">LinkedIn</a></li>
             </ul>
           </div>
         </div>
@@ -587,7 +489,7 @@
 
       function setup() {
         // Hero section canvas
-        heroCanvas = createCanvas(windowWidth, 200);
+        heroCanvas = createCanvas(windowWidth, 250);
         heroCanvas.parent("hero-canvas");
         noStroke();
       }
@@ -599,7 +501,7 @@
       }
 
       function windowResized() {
-        resizeCanvas(windowWidth, 200); // Always 200px high
+        resizeCanvas(windowWidth, 250); // Always 200px high
       }
     </script>
   </body>
